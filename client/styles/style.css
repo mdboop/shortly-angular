@@ -146,3 +146,8 @@ input[type=url]:focus {
   clear: both;
 }
 
+.newLink {
+  display: flex;
+  justify-content: space-between;
+}
+
