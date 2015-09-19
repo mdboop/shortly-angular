@@ -27,6 +27,10 @@ h1 {
   list-style: none;
 }
 
+.none {
+  display: none;
+}
+
 .navigation li {
   float: left;
 }
@@ -115,6 +119,7 @@ input[type=url]:focus {
 
 
 .error {
+  display: block !important;
   border: red solid 4px;
   padding: 10px;
   margin: 0 10px;
