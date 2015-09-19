@@ -4,17 +4,17 @@
        <input ng-model="formLink.url" class='text' type='text' name='url'>
        <input type='submit' value='Shorten'>
    </form>
-   <img class='spinner' src='../../assets/spiffygif_46x46.gif'>
-  <div ng-model="newLink" class="newLink">
-    <img src='../../assets/redirect_icon.png'/>
+   <img ng-show="newLink && !newLink.url" class='spinner' src='../../assets/spiffygif_46x46.gif' />
+  <div ng-model="newLink" ng-show="newLink.url">
     <div class='info'>
+      <img src='../../assets/redirect_icon.png'/>
       <div class='visits'><span class='count'>{{ newLink.visits }}</span>Visits</div>
       <div class='title'>{{ newLink.title }}</div>
       <div class='original'>{{ newLink.url }}</div>
       <a ng-href='{{newLink.base_url}}/{{newLink.code}}'>{{ newLink.base_url }}/{{ newLink.code }}</a>
     </div>
   </div>
-  <div ng-class="ngErrorClass">
+  <div class="error" ng-hide="newLink">
     Please enter a valid url.
   </div>
 </div>

@@ -23,9 +23,9 @@ module.exports = function (app, express) {
   app.use(helpers.errorHandler);
 
 
-  app.get('/*', function (req, res) {
-    res.redirect('/#/links');
-  });
+  // app.get('/*', function (req, res) {
+  //   res.redirect('/#/links');
+  // });
 
   // inject our routers into their respective route files
   require('../users/userRoutes.js')(userRouter);
