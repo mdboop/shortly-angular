@@ -8,7 +8,8 @@ angular.module('shortly.services', [])
       data: link
     })
     .then(function (response) {
-      console.log('successful post', response);
+      console.log('Successful post!', response.data);
+      return response.data;
     });
   };
 
@@ -18,7 +19,6 @@ angular.module('shortly.services', [])
       url: '/api/links'
     })
     .then(function (response) {
-      console.log('In services: ', response);
       return response.data;
     });
   };
