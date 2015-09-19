@@ -1,13 +1,16 @@
 angular.module('shortly.links', [])
 
 .controller('LinksController', function ($scope, $http, Links) {
-  $scope.data = {};
-  $scope.getLinks = function() {
-    $http.get('/api/links')
-      .then(function(response){
-        $scope.data.links = response.data;
+  $scope.data = {
+    links: []
+  };
+  $scope.getLinks = function () {
+    Links.getLinks()
+      .then(function (data) {
+        console.log('In LinksController: ', data);
+        $scope.data.links.push(data);
       })
-      .catch(function(err){
+      .catch(function (err) {
         throw err;
       });
   };

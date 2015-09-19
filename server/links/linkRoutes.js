@@ -9,7 +9,6 @@ module.exports = function (app) {
   // req.navLink before it reaches line 16.
   app.param('code', linksController.findUrl);
 
-  
 
   app.route('/')
     .get(linksController.allLinks)
