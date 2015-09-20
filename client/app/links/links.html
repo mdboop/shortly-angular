@@ -1,6 +1,7 @@
 <div id='container'>
   <ul>
-    <li ng-repeat="link in data.links | orderBy:'visits':true track by $index">
+    <input ng-model="input" type="text">
+    <li ng-repeat="link in data.links | filter:input | orderBy:'visits':true track by $index">
       <img src="../../assets/redirect_icon.png"/>
       <div class="info">
         <div class="visits"><span class="count">{{ link.visits }}</span>Visits</div>

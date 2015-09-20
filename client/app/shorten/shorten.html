@@ -1,10 +1,9 @@
 <div id='container'>
 <!-- Your code here -->
-  <form ng-submit="addLink()">
-       <input ng-model="formLink.url" class='text' type='text' name='url'>
+  <form name="shortlyForm" ng-submit="addLink()" novalidate>
+       <input ng-class="{'error': shortlyForm.$invalid && shortlyForm.$dirty}"ng-model="formLink.url" type='url'>
        <input type='submit' value='Shorten'>
    </form>
-   <img ng-show="newLink && !newLink.url" class='spinner' src='../../assets/spiffygif_46x46.gif' />
   <div ng-model="newLink" ng-show="newLink.url">
     <div class='info'>
       <img src='../../assets/redirect_icon.png'/>
@@ -14,9 +13,7 @@
       <a ng-href='{{newLink.base_url}}/{{newLink.code}}'>{{ newLink.base_url }}/{{ newLink.code }}</a>
     </div>
   </div>
-  <div class="error" ng-hide="newLink">
-    Please enter a valid url.
-  </div>
+    <div ng-show="shortlyForm.$invalid">Please enter a valid url.</div>
 </div>
 
 
